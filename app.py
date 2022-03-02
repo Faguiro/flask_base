@@ -91,6 +91,18 @@ def settings():
     return redirect(url_for('login'))
 
 
+@app.route('/time')
+def get_current_time():
+    t = time()
+    return {'time': strftime('%c', localtime())}
+    return {'time': ctime(t)}
+
+
+@app.route('/content')
+def content():
+    return {'content': 'https://www.linkedin.com/in/faguiro/'}
+
+
 # ======== Main ============================================================== #
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)
