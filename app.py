@@ -7,8 +7,15 @@ from flask import Flask, redirect, url_for, render_template, request, session
 import json
 import sys
 import os
+from flask import Flask, render_template
+from time import time, ctime, strftime, localtime
+import locale
+locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_folder='build',
+            static_url_path='/', template_folder='build')
+
 app.secret_key = os.urandom(12)  # Generic key for dev purposes only
 
 # Heroku
