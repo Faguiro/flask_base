@@ -13,8 +13,8 @@ import locale
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
 
-app = Flask(__name__, static_folder='build',
-            static_url_path='/', template_folder='build')
+app = Flask(__name__, static_folder='templates',
+            static_url_path='/', template_folder='templates')
 
 app.secret_key = os.urandom(12)  # Generic key for dev purposes only
 
